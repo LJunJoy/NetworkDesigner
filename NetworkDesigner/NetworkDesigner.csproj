@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A01EE69-D56F-4855-9709-62E1BD122EB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetworkDesigner</RootNamespace>
+    <AssemblyName>NetworkDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mind-map-64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Antlr3.StringTemplate, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>packages\StringTemplate3.3.5.1\lib\net35-client\Antlr3.StringTemplate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Syncfusion.Diagram.Base, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Diagram.Windows, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Edit.Windows, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Grid.Base, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Windows, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Base, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Windows, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Tools.Base, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Tools.Windows, Version=15.2450.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Beans\Common\AppSetting.cs" />
+    <Compile Include="Beans\Model\ModelInfo.cs" />
+    <Compile Include="Beans\Model\GridCellData.cs" />
+    <Compile Include="Beans\Model\ModelMapInfo.cs" />
+    <Compile Include="Beans\Model\ModelTransInfo.cs" />
+    <Compile Include="Beans\Model\SimModel.cs" />
+    <Compile Include="Beans\Model\SimScenario.cs" />
+    <Compile Include="Beans\Topology\Layout.cs" />
+    <Compile Include="Beans\Topology\NodeTag.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Model\ConvertHelper.cs" />
+    <Compile Include="Service\Model\ModelInfoHelper.cs" />
+    <Compile Include="Service\Model\PropertyManagerCls.cs" />
+    <Compile Include="Service\Topology\TopoHelper.cs" />
+    <Compile Include="Service\Topology\TestLayout.cs" />
+    <Compile Include="Service\Topology\TestNetwork.cs" />
+    <Compile Include="UI\Dialog\DiaNewFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\DiaNewFile.Designer.cs">
+      <DependentUpon>DiaNewFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialog\DiaNewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\DiaNewProject.Designer.cs">
+      <DependentUpon>DiaNewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialog\DiaSaveToPalette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\DiaSaveToPalette.Designer.cs">
+      <DependentUpon>DiaSaveToPalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialog\DiaSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\DiaSplashScreen.Designer.cs">
+      <DependentUpon>DiaSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Document\FactoryDocument.cs" />
+    <Compile Include="UI\Document\FindAndReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Document\FindAndReplaceForm.designer.cs" />
+    <Compile Include="UI\Document\FrmDiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Document\FrmDiagram.Designer.cs">
+      <DependentUpon>FrmDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Document\FrmDocBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Document\FrmDocBase.Designer.cs">
+      <DependentUpon>FrmDocBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Document\FrmSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Document\FrmSymbol.Designer.cs">
+      <DependentUpon>FrmSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Document\FrmTextDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Document\FrmTextDoc.Designer.cs">
+      <DependentUpon>FrmTextDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Document\XmlFoldingStrategy.cs" />
+    <Compile Include="UI\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMainDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Model\FrmTopology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Model\FrmTopology.Designer.cs">
+      <DependentUpon>FrmTopology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Model\FrmTraffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Model\FrmTraffic.Designer.cs">
+      <DependentUpon>FrmTraffic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmBase.Designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmModelAttr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmModelAttr.Designer.cs">
+      <DependentUpon>FrmModelAttr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmOutput.Designer.cs">
+      <DependentUpon>FrmOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmProperty.Designer.cs">
+      <DependentUpon>FrmProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmSolution.Designer.cs">
+      <DependentUpon>FrmSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmToolbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmToolbox.Designer.cs">
+      <DependentUpon>FrmToolbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmTreeGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWindow\FrmTreeGrid.Designer.cs">
+      <DependentUpon>FrmTreeGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolWindow\TreeGridCell.cs" />
+    <Compile Include="UI\ToolWindow\TreeModelAttr.cs" />
+    <Compile Include="Utils\Common\PrintHelper.cs" />
+    <Compile Include="Utils\DiagramUtil\DiagramHelper.cs" />
+    <Compile Include="Utils\DiagramUtil\NodeHelper.cs" />
+    <Compile Include="Utils\DiagramUtil\PaletteHelper.cs" />
+    <Compile Include="Utils\FileUtil\FileHelper.cs" />
+    <Compile Include="Utils\FileUtil\ImageHelper.cs" />
+    <Compile Include="Utils\FileUtil\TxtFileEncoder.cs" />
+    <Compile Include="Utils\FileUtil\XmlHelper.cs" />
+    <Compile Include="Utils\Common\LogHelper.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Dialog\DiaNewFile.resx">
+      <DependentUpon>DiaNewFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialog\DiaNewProject.resx">
+      <DependentUpon>DiaNewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialog\DiaSaveToPalette.resx">
+      <DependentUpon>DiaSaveToPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialog\DiaSplashScreen.resx">
+      <DependentUpon>DiaSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Document\FrmDiagram.resx">
+      <DependentUpon>FrmDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Document\FrmDocBase.resx">
+      <DependentUpon>FrmDocBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Document\FrmSymbol.resx">
+      <DependentUpon>FrmSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Document\FrmTextDoc.resx">
+      <DependentUpon>FrmTextDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Model\FrmTopology.resx">
+      <DependentUpon>FrmTopology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Model\FrmTraffic.resx">
+      <DependentUpon>FrmTraffic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWindow\FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWindow\FrmModelAttr.resx">
+      <DependentUpon>FrmModelAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWindow\FrmOutput.resx">
+      <DependentUpon>FrmOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWindow\FrmProperty.resx">
+      <DependentUpon>FrmProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWindow\FrmSolution.resx">
+      <DependentUpon>FrmSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWindow\FrmToolbox.resx">
+      <DependentUpon>FrmToolbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWindow\FrmTreeGrid.resx">
+      <DependentUpon>FrmTreeGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\EditConfig.xml" />
+    <Content Include="Config\AppSetting.xml" />
+    <None Include="Resources\expand.png" />
+    <None Include="Resources\collapse.png" />
+    <None Include="Resources\write.png" />
+    <None Include="Resources\textfield_rename.png" />
+    <None Include="Resources\page_white_paste.png" />
+    <None Include="Resources\page_copy.png" />
+    <None Include="Resources\open-in-app.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\font_red_delete.png" />
+    <None Include="Resources\folder-add.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\close2.png" />
+    <None Include="Resources\new-document.png" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\reload.png" />
+    <Content Include="mind-map-64.ico" />
+    <Content Include="开发文档\命名约定.txt" />
+    <Content Include="开发文档\vs快捷键.txt" />
+    <Content Include="开发文档\架构设计.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OfficePickers\OfficePickers.csproj">
+      <Project>{CAD56B75-481B-4C76-B090-4BC2FF5E5681}</Project>
+      <Name>OfficePickers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\ThemeVS2012Light.csproj">
+      <Project>{4ED4FDB5-9FD0-49E6-876D-1635F727C755}</Project>
+      <Name>ThemeVS2012Light</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

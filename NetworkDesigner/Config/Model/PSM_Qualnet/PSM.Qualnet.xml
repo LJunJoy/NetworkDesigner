@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelInfo>
+  <Model 模型名称="node" 模型类别="Qualnet.实体.节点" 模型图片="主机.png">
+	<Attr name="name" type="字符串"/>
+	<Attr name="id" type="字符串" converter="整数"/>
+	<Attr name="icon" type="字符串" def="default.png" converter="文件"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>	
+	<Attr name="mobility" type="字符串" def="" converter="文件"/>
+	<Attr name="intfs" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+  </Model>
+  <Model 模型名称="switch" 模型类别="Qualnet.实体.节点" 模型图片="交换机.png">
+	<Attr name="name" type="字符串"/>
+	<Attr name="id" type="字符串" converter="整数"/>
+	<Attr name="icon" type="字符串" def="switch.png" converter="文件"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="mobility" type="字符串" def="" converter="文件"/>
+	<Attr name="intfs" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+  </Model>
+  
+  <Model 模型名称="wiredSubnet" 模型类别="Qualnet.实体.子网" 模型图片="有线子网.png">
+	<Attr name="icon" type="字符串" def="hub.png" converter="文件"/>
+	<Attr name="bandwidth" type="字符串" def="10M" converter="带宽"/>
+	<Attr name="packetDelay" type="字符串" def="0ms" converter="时间"/>
+	<Attr name="dropProbability" type="字符串" def="0" converter="实数"/>
+	<Attr name="802.3mode" type="选择器" def="Full-Duplex">
+		<option>Full-Duplex</option>
+		<option>Half-Duplex</option>
+	</Attr>
+	<Attr name="ip" type="模型" ref="Qualnet.组件.协议.ip"/>
+	<Attr name="route" type="字符串"/>
+	<Attr name="intfs" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+  </Model>
+  <Model 模型名称="wirelessSubnet" 模型类别="Qualnet.实体.子网" 模型图片="无线子网.png">
+	<Attr name="bandwidth" type="字符串" def="10M" converter="带宽"/>
+	<Attr name="packetDelay" type="字符串" def="0ms" converter="时间"/>
+	<Attr name="dropProbability" type="字符串" def="0" converter="实数"/>
+	<Attr name="ip" type="模型" ref="Qualnet.组件.协议.ip"/>
+	<Attr name="route" type="字符串"/>
+	<Attr name="intfs" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+  </Model>
+  
+  <Model 模型名称="wiredLink" 模型类别="Qualnet.实体.链路" 模型图片="链路.png">
+	<Attr name="bandwidth" type="字符串" def="10M" converter="带宽"/>
+	<Attr name="packetDelay" type="字符串" def="0ms" converter="时间"/>
+	<Attr name="dropProbability" type="字符串" def="0" converter="实数"/>
+	<Attr name="srcIntf" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+	<Attr name="destIntf" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+	<Attr name="802.3mode" type="选择器" def="Full-Duplex">
+		<option>Full-Duplex</option>
+		<option>Half-Duplex</option>
+	</Attr>
+  </Model>
+  <Model 模型名称="wirelessLink" 模型类别="Qualnet.实体.链路" 模型图片="无线.png">
+	<Attr name="bandwidth" type="字符串" def="10M" converter="带宽"/>
+	<Attr name="packetDelay" type="字符串" def="0ms" converter="时间"/>
+	<Attr name="dropProbability" type="字符串" def="0" converter="实数"/>
+	<Attr name="srcIntf" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+	<Attr name="destIntf" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+  </Model>  
+  
+  <Model 模型名称="ip" 模型类别="Qualnet.组件.协议" 模型图片="ip.png">
+	<Attr name="ip" type="字符串" converter="IPAddr"/>
+	<Attr name="mask" type="字符串" def="255.255.255.0" converter="IPMask"/>
+	<Attr name="nNet" type="字符串" def="24" converter="整数"/>
+	<Attr name="nHost" type="字符串" def="8" converter="整数"/>
+  </Model>
+  <Model 模型名称="route" 模型类别="Qualnet.组件.协议" 模型图片="route.png">
+	<Attr name="type" type="选择器" def="None">
+		<option>None</option>
+		<option>RIP</option>
+		<option>OSPF</option>
+		<option>IGRP</option>
+		<option>AODV</option>
+	</Attr>
+	<Attr name="param" type="字符串"/>
+  </Model>
+  <Model 模型名称="intf" 模型类别="Qualnet.组件.接口" 模型图片="intf.png">
+	<Attr name="IF" type="字符串" def="0"/>
+	<Attr name="IP" type="模型" ref="Qualnet.组件.协议.ip"/>
+	<Attr name="route" type="字符串"/>
+  </Model>
+</ModelInfo>

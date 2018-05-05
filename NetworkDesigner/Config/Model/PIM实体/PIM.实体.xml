@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelInfo>
+  <Model 模型名称="host" 模型类别="PIM.实体.节点" 模型图片="主机.png">
+	<Attr name="名称" type="字符串"/>
+	<Attr name="图标" type="字符串" def="主机.png" converter="文件"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="轨迹" type="字符串" def="" converter="文件"/>
+	<Attr name="接口" type="接口列表" ref="PIM.组件.接口.intf" count="1" />
+	<Attr name="TCP" type="模型" ref="PIM.组件.协议.tcp" />
+	<Attr name="路由" type="模型" ref="PIM.组件.协议.route" />
+	<Attr name="flag" type="字符串" def="host" />
+  </Model>
+  <Model 模型名称="switch" 模型类别="PIM.实体.节点" 模型图片="交换机.png">
+    <Attr name="名称" type="字符串"/>
+	<Attr name="图标" type="字符串" def="交换机.png" converter="文件"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="轨迹" type="字符串" def="" converter="文件"/>
+	<Attr name="STP" type="字符串" def="Y" converter="BOOL"/>
+	<Attr name="背板吞吐量" type="字符串" converter="带宽" def="48G"/>
+	<Attr name="传输速率" type="字符串" converter="带宽" def="10M"/>
+	<Attr name="输入队列" type="字符串" converter="容量"/>
+	<Attr name="输出队列" type="字符串" converter="容量"/>
+	<Attr name="接口" type="接口列表" ref="PIM.组件.接口.intf" count="0" />
+	<Attr name="flag" type="字符串" def="switch" />
+  </Model>
+  <Model 模型名称="router" 模型类别="PIM.实体.节点" 模型图片="路由器.png">
+	<Attr name="名称" type="字符串"/>
+	<Attr name="图标" type="字符串" def="默认"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="轨迹" type="字符串" def="" converter="文件"/>
+	<Attr name="网关" type="字符串" converter="IPAddr"/>
+	<Attr name="DNS" type="字符串" converter="IPAddr"/>
+	<Attr name="路由" type="模型" ref="PIM.组件.协议.route"/>
+	<Attr name="传输速率" type="字符串" converter="带宽" def="100M"/>
+	<Attr name="队列容量" type="字符串" converter="带宽"/>
+	<Attr name="接口" type="接口列表" ref="PIM.组件.接口.intf" count="1"/>
+	<Attr name="flag" type="字符串" def="route" />
+  </Model>
+  <Model 模型名称="mobile" 模型类别="PIM.实体.节点" 模型图片="mobile.png">
+	<Attr name="名称" type="字符串"/>
+	<Attr name="图标" type="字符串" def="默认"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="轨迹" type="字符串" def="" converter="文件"/>
+	<Attr name="发射功率" type="字符串" converter="功率" def="15dbm"/>
+	<Attr name="接收门限" type="字符串" converter="功率" def="-81dbm"/>
+	<Attr name="接收灵敏度" type="字符串" converter="功率" def="-91dbm"/>
+	<Attr name="接口" type="接口列表" ref="PIM.组件.接口.intf" count="1"/>
+  </Model>
+  <Model 模型名称="station" 模型类别="PIM.实体.节点" 模型图片="station.png">
+	<Attr name="名称" type="字符串"/>
+	<Attr name="图标" type="字符串" def="默认"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="发射功率" type="字符串" converter="功率" def="15dbm"/>
+	<Attr name="接收门限" type="字符串" converter="功率" def="-81dbm"/>
+	<Attr name="接收灵敏度" type="字符串" converter="功率" def="-91dbm"/>
+	<Attr name="接口" type="接口列表" ref="PIM.组件.接口.intf" count="1"/>
+  </Model>
+  <Model 模型名称="satellite" 模型类别="PIM.实体.节点" 模型图片="satellite.png">
+	<Attr name="名称" type="字符串"/>
+	<Attr name="图标" type="字符串" def="默认"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="轨迹" type="字符串" def="" converter="文件"/>
+	<Attr name="发射功率" type="字符串" converter="功率" def="15dbm"/>
+	<Attr name="接收门限" type="字符串" converter="功率" def="-81dbm"/>
+	<Attr name="接收灵敏度" type="字符串" converter="功率" def="-91dbm"/>
+	<Attr name="接口" type="接口列表" ref="PIM.组件.接口.intf" count="1"/>
+  </Model>
+  
+  
+  <Model 模型名称="wiredLink" 模型类别="PIM.实体.链路" 模型图片="链路.png">
+	<Attr name="带宽" type="字符串" converter="带宽" def="10M"/>
+	<Attr name="时延" type="字符串" converter="时间" def="20ms"/>
+	<Attr name="误码率" type="字符串" converter="实数" def="0"/>
+	<Attr name="丢包率" type="字符串" converter="实数" def="0"/>
+	<Attr name="源接口" type="接口列表" ref="PIM.组件.接口.intf"/>
+	<Attr name="目的接口" type="接口列表" ref="PIM.组件.接口.intf"/>
+	<Attr name="工作模式" type="选择器" def="双工">
+		<option>双工</option>
+		<option>单工</option>
+	</Attr>
+  </Model>
+  <Model 模型名称="wirelessLink" 模型类别="PIM.实体.链路" 模型图片="无线.png">
+	<Attr name="带宽" type="字符串" converter="带宽" def="10M"/>
+	<Attr name="传播速率" type="字符串" converter="速率" def="300000000"/>
+	<Attr name="误码率" type="字符串" converter="实数" def="0"/>
+	<Attr name="丢包率" type="字符串" converter="实数" def="0"/>
+	<Attr name="源接口" type="接口列表" ref="PIM.组件.接口.intf"/>
+	<Attr name="目的接口" type="接口列表" ref="PIM.组件.接口.intf"/>
+  </Model>
+  <Model 模型名称="wirelessSubnet" 模型类别="PIM.实体.组合" 模型图片="云端.png">
+	<Attr name="带宽" type="字符串" converter="带宽" def="10M"/>
+	<Attr name="传播速率" type="字符串" converter="速率" def="300000000"/>
+	<Attr name="误码率" type="字符串" converter="实数" def="0"/>
+	<Attr name="丢包率" type="字符串" converter="实数" def="0"/>
+	<Attr name="net" type="字符串" converter="IPAddr" def="190.0.1.0"/>
+	<Attr name="mask" type="字符串" converter="IPMask" def="255.255.255.0"/>
+	<Attr name="接口" type="接口列表" ref="PIM.组件.接口.intf" count="0" />
+	<Attr name="MAC" type="模型" ref="PIM.组件.协议.MAC"/>
+	<Attr name="Phy" type="模型" ref="PIM.组件.协议.Phy"/>
+	<Attr name="路由协议" type="选择器" def="RIP">
+		<option>RIP</option>
+		<option>OSPF</option>
+		<option>IGRP</option>
+		<option>AODV</option>
+	</Attr>
+	<Attr name="默认路由" type="字符串" converter="路由表项" />
+	<Attr name="静态路由" type="字符串" converter="路由表项" />
+  </Model>
+
+</ModelInfo>

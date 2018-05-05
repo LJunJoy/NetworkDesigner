@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelTransInfo>
+  <Model 模型名称="node" 模型类别="转换模型.Qualnet" 模型图片="主机.png">
+	<Attr name="name" type="字符串"/>
+	<Attr name="id" type="字符串" converter="整数"/>
+	<Attr name="icon" type="字符串" def="default.png" converter="文件"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>	
+	<Attr name="mobility" type="字符串" def="" converter="文件"/>
+	<Attr name="intfs" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+  </Model>
+  <Model 模型名称="switch" 模型类别="转换模型.Qualnet" 模型图片="交换机.png">
+	<Attr name="name" type="字符串"/>
+	<Attr name="id" type="字符串" converter="整数"/>
+	<Attr name="icon" type="字符串" def="switch.png" converter="文件"/>
+	<Attr name="X" type="字符串" converter="坐标"/>
+	<Attr name="Y" type="字符串" converter="坐标"/>
+	<Attr name="Z" type="字符串" def="0" converter="坐标"/>
+	<Attr name="mobility" type="字符串" def="" converter="文件"/>
+	<Attr name="intfs" type="接口列表" ref="Qualnet.组件.接口.intf"/>
+  </Model>
+</ModelTransInfo>

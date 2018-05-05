@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserSetting>
+  <RecentProjectPath>
+    <ProjectPath>C:\Users\Lcj\Documents\Visual Studio 2012\毕设程序\NetworkDesigner\Config\Model</ProjectPath>
+    <ProjectPath>D:\Temp Files\设计项目\项目1</ProjectPath>
+    <ProjectPath>D:\Temp Files\设计项目\项目2</ProjectPath>
+    <ProjectPath>D:\Temp Files\设计项目\项目3</ProjectPath>
+  </RecentProjectPath>
+  <SymbolPalettes>
+    <!--包含英文冒号分隔符的视作绝对路径，否则取相对到binpath的相对路径，会遍历此目录下所有文件夹-->
+    <Directory>Config\Model</Directory>
+  </SymbolPalettes>
+  <EditorSyntaxModes>
+    <SyntaxMode>Default</SyntaxMode>
+    <SyntaxMode>XML</SyntaxMode>
+    <SyntaxMode>C#</SyntaxMode>
+    <SyntaxMode>BAT</SyntaxMode>
+    <SyntaxMode>HTML</SyntaxMode>
+  </EditorSyntaxModes>
+</UserSetting>

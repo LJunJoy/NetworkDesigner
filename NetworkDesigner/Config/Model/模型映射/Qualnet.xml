@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelTransInfo>
+  <ModelTrans src="PIM.实体.节点.主机" dest="PSM.Qualnet.实体.node">  
+	<Attr src="名称" dest="name"/>
+	<Attr src="图标" dest="icon"  converter="文件"/>
+	<Attr src="ID" dest="id"/>
+	<Attr src="X" dest="X"/>
+	<Attr src="Y" dest="Y"/>
+	<Attr src="轨迹" dest="mobility" converter="文件"/>
+	<Attr src="接口" dest="intfs"/>
+  </ModelTrans>
+  <ModelTrans src="PIM.实体.节点.主机" dest="PSM.Qualnet.实体.node">  
+	<Attr src="名称" dest="name"/>
+	<Attr src="图标" dest="icon"  converter="文件"/>
+	<Attr src="ID" dest="id"/>
+	<Attr src="X" dest="X"/>
+	<Attr src="Y" dest="Y"/>
+	<Attr src="轨迹" dest="mobility" converter="文件"/>
+	<Attr src="接口" dest="intfs"/>
+  </ModelTrans>
+  <ModelTrans src="PIM.组件.接口.intf" dest="Qualnet.组件.接口.intf">  
+	<Attr src="编号" dest="IF"/>
+	<Attr src="IP" dest="IP"/>
+	<Attr src="路由" dest="route"/>
+  </ModelTrans>
+  <ModelTrans src="PIM.组件.协议.ip" dest="Qualnet.组件.协议.ip">  
+	<Attr src="编号" dest="IF"/>
+	<Attr src="IP" dest="IP"/>
+	<Attr src="路由" dest="route"/>
+  </ModelTrans>
+  <ModelTrans src="PIM.组件.协议.路由" dest="Qualnet.组件.协议.route">  
+	<Attr src="类型" dest="type"/>
+	<Attr src="参数" dest="param"/>
+  </ModelTrans>   
+</ModelTransInfo>

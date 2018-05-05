@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelInfo>
+  <Model 模型名称="tcp" 模型类别="PIM.组件.协议" 模型图片="tcp.png">
+    <Attr name="类型" type="选择器" def="Lite">
+		<option>Abstact</option>
+		<option>Lite</option>
+		<option>Reno</option>
+		<option>New Reno</option>
+		<option>SACK</option>
+	</Attr>
+	<Attr name="最大分段" type="字符串" converter="整数" def="512"/>
+	<Attr name="发送窗口" type="字符串" converter="整数" def="16384"/>
+	<Attr name="接收窗口" type="字符串" converter="整数" def="16384"/>
+  </Model>
+  <Model 模型名称="ip" 模型类别="PIM.组件.协议" 模型图片="ip.png">
+	<Attr name="ip" type="字符串" converter="IPAddr"/>
+	<Attr name="mask" type="字符串" def="255.255.255.0" converter="IPMask"/>
+	<Attr name="nNet" type="字符串" def="24" converter="整数"/>
+	<Attr name="nHost" type="字符串" def="8" converter="整数"/>	
+  </Model> 
+  <Model 模型名称="route" 模型类别="PIM.组件.协议" 模型图片="route.png">
+	<Attr name="类型" type="选择器" def="None">
+		<option>None</option>
+		<option>RIP</option>
+		<option>OSPF</option>
+		<option>IGRP</option>
+		<option>AODV</option>
+	</Attr>
+	<Attr name="参数" type="字符串"/>
+	<Attr name="默认路由" type="字符串" converter="路由表项"/>
+	<Attr name="静态路由" type="字符串" converter="路由表项"/>
+  </Model>
+  <Model 模型名称="MAC" 模型类别="PIM.组件.协议" 模型图片="ip.png">
+	<Attr name="名称" type="字符串" def="Abstract"/>
+  </Model>
+  <Model 模型名称="Phy" 模型类别="PIM.组件.协议" 模型图片="ip.png">
+	<Attr name="名称" type="字符串" def="Abstract"/>
+  </Model>  
+  <Model 模型名称="intf" 模型类别="PIM.组件.接口" 模型图片="intf.png">
+	<Attr name="编号" type="字符串"/>
+	<Attr name="IP" type="模型" ref="PIM.组件.协议.ip"/>
+	<Attr name="路由" type="模型" ref="PIM.组件.协议.route"/>
+  </Model>
+
+</ModelInfo>
